@@ -38,29 +38,29 @@
           </div>
           <div class="x_content">
 
-                  <form method="post" class="form-horizontal form-label-left" enctype="multipart/form-data">
-                    {% csrf_token %}
-                    {% for field in form %}
-                    <div class="item form-group">
-                      <label class="control-label col-md-3 col-sm-3 col-xs-12">{{ field.label }}
-                      </label>
-                      <div class="col-md-6 col-sm-6 col-xs-12">
-                        {{ field }}
-                        <span style="color:red; font-size: 14px;">{{ field.errors.0 }}</span>
-                        <span style="color:orangered; font-size: 14px;">{{ process_result|safe }}</span>
-                      </div>
-                    </div>
-                    {% endfor %}
-                    <hr style="border: 1px solid lightgray;">
-                    <div class="form-group">
-                      <div class="col-md-6 col-md-offset-3">
-                        <button class="btn btn-round btn-warning" type="button" onclick="redirectTo()">返回</button>
-                        <button class="btn btn-round btn-primary" type="button" onclick="resetForm()">重置</button>
-                        <button id="send" type="submit" class="btn btn-round btn-success">提交</button>
-                      </div>
-                    </div>
-                  </form>
+            <form method="post" class="form-horizontal form-label-left" enctype="multipart/form-data">
+              {% csrf_token %}
+              {% for field in form %}
+              <div class="item form-group">
+                <label class="control-label col-md-3 col-sm-3 col-xs-12">{{ field.label }}
+                </label>
+                <div class="col-md-6 col-sm-6 col-xs-12">
+                  {{ field }}
+                  <span style="color:red; font-size: 14px;">{{ field.errors.0 }}</span>
+                  <span style="color:orangered; font-size: 14px;">{{ process_result|safe }}</span>
                 </div>
+              </div>
+              {% endfor %}
+              <hr style="border: 1px solid lightgray;">
+              <div class="form-group">
+                <div class="col-md-6 col-md-offset-3">
+                  <button class="btn btn-round btn-warning" type="button" onclick="redirectTo()">返回</button>
+                  <button class="btn btn-round btn-primary" type="button" onclick="resetForm()">重置</button>
+                  <button id="send" type="submit" class="btn btn-round btn-success">提交</button>
+                </div>
+              </div>
+            </form>
+          </div>
         </div>
       </div>
     </div>

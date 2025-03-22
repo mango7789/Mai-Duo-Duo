@@ -1,6 +1,7 @@
 from django.db import models
 from manager.models import shop
 
+
 class salesman(models.Model):
     id = models.AutoField(primary_key=True)
     salesman_password = models.CharField(max_length=20)

@@ -1,19 +1,19 @@
 ## 卖多多销售数据库系统
 
-- 技术路径：基于`Django`框架开发，后端为`MySQL`
+- 技术路径：基于 `Django` 框架开发，后端为 `MySQL`，前端为 `bootstrap`
 - 项目对标：“进销存管理+人员管理+数据可视化分析”**一站式轻量级**数据库系统
 
 ### 项目文件结构
 
 ```txt
-├──database\        # 数据库配置文件夹
+├──database         # 数据库配置文件夹
     ├──__init__.py       
     ├──asgi.py   
     ├──handler.py       # 异常状态处理器 
     ├──settings.py      # 数据库设置
-    ├──urls.py          # web端url地址
+    ├──urls.py          # web 端 url 地址
     └──wsgi.py   
-├──manager\         # @app 管理层   
+├──manager          # @app 管理层   
     ├──__init__.py
     ├──admin.py       
     ├──apps.py         
@@ -23,30 +23,30 @@
     ├──utils.py         # 辅助函数
     ├──config.py        # 参数(常数)配置   
     └──views.py         # 管理层主要函数
-├──staff\           # @app 员工层
+├──staff            # @app 员工层
     ├──__init__.py  
     ├──admin.py       
     ├──apps.py         
     ├──test.py   
     ├──models.py        # 员工层表结构
-    └──views.py         # 员工层表单+主要函数
-├──backup\          # 存储用户上传的订单文件
-├──static\          # 静态文件   
-├──template\        # 所有html文件
-├──manage.py        # 管理该项目的python文件
-├──retail.sql       # 导入测试数据的sql脚本
+    └──views.py         # 员工层表单 + 主要函数
+├──backup/*         # 存储用户上传的订单文件
+├──static/*         # 静态文件   
+├──template/*       # 所有 html 文件
+├──manage.py        # 管理该项目的 python 文件
+├──retail.sql       # 导入测试数据的 sql 脚本
 └──requirements.txt # 该项目依赖库文件
 ```
 
 ### 本地部署
 
-- 在MySQL中创建 `Retail`表，并在`settings.py`中配置对应的用户名和密码
+- 在MySQL中创建 `Retail` 表，并在 `settings.py` 中配置对应的用户名和密码
   ```sql
   CREATE SCHEMA Retail;
   USE Retail;
   ```
   ```python
-  ### database/settings.py
+  # database/settings.py
   DATABASES = {
       'default': {
           'ENGINE': 'django.db.backends.mysql',
@@ -54,7 +54,7 @@
           'USER': 'root',         # 用户名
           'PASSWORD': '123456',   # 密码
           'HOST': '127.0.0.1',
-          'PORT': '3306'
+          'PORT': '3306'          # MySQL 服务器端口，默认 3306
       }
   }
   ```  
@@ -72,10 +72,15 @@
   点击 http://127.0.0.1:8000/ 即可跳转到登录界面
 
 > [!TIP]
-> `--insecure`参数保证静态文件能被`Django`读取，`0.0.0.0:80`保证网址能被外部计算机通过80号端口进行访问
+> `--insecure` 参数保证静态文件能被 `Django` 读取，`0.0.0.0:80` 保证网址能被外部计算机通过 80 号端口进行访问
 
 ### 小组成员
 
 - [mango7789](https://github.com/mango7789)
 - [Oxlord-Lin](https://github.com/Oxlord-Lin)
 - [Julius-Woo](https://github.com/Julius-Woo)
+
+
+### 参考资料
+- [前端模板 Gentelella](https://github.com/GiriB/django-gentelella)
+- [Django 教程](https://www.bilibili.com/video/BV1NL41157ph)
